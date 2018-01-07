@@ -204,6 +204,7 @@ public class VAInstrumentation extends Instrumentation implements Handler.Callba
             Context base = activity.getBaseContext();
             try {
                 LoadedPlugin plugin = this.mPluginManager.getLoadedPlugin(intent);
+                // 这一步多此一举
                 ReflectUtil.setField(base.getClass(), base, "mResources", plugin.getResources());
                 ReflectUtil.setField(ContextWrapper.class, activity, "mBase", plugin.getPluginContext());
                 ReflectUtil.setField(Activity.class, activity, "mApplication", plugin.getApplication());

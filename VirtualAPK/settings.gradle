@@ -1,5 +1,5 @@
 include ':app'
 include ':CoreLibrary'
 include ':AndroidStub'
-include ':plugin'
-project(':plugin').projectDir = new File(rootDir, 'PluginDemo/app')
+include ':pluginDemo'
+project(':pluginDemo').projectDir = new File(rootDir, 'PluginDemo/app')

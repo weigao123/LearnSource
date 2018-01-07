@@ -58,6 +58,7 @@ public class ComponentsHandler {
      */
     public Intent transformIntentToExplicitAsNeeded(Intent intent) {
         ComponentName component = intent.getComponent();
+        // component==null就行了吧，后面啥意思，宿主？
         if (component == null
             || component.getPackageName().equals(mContext.getPackageName())) {
             ResolveInfo info = mPluginManager.resolveActivity(intent);
